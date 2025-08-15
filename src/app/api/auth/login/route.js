@@ -8,7 +8,7 @@ export async function POST(req) {
 
   const body = await req.json();
 
-  const res = await fetch(`${baseUrl}/auth/forgot-password${queryParams}`, {
+  const res = await fetch(`${baseUrl}/login${queryParams}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
