@@ -3,7 +3,7 @@ import {LuArrowRight} from 'react-icons/lu';
 
 export function CTASection() {
   return (
-    <Box py={{base: '20', sm: '32'}}>
+    <Box py={16}>
       <Container maxW="container.xl" px={{base: 4, sm: 6, lg: 8}}>
         <Stack gap={{base: '2', md: '4'}} alignItems="center">
           <Heading

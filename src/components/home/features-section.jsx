@@ -71,24 +71,25 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <Stack id="features" py={{base: 20, sm: 32}} gap={2}>
-      <Container maxW="container.xl" px={{base: 4, sm: 6, lg: 8}}>
-        <Stack maxW="2xl" mx="auto" textAlign="center">
+    <Container id="features" maxW="container.xl">
+      <Stack gap={12}>
+        <Stack gap={3} justifyContent={'center'} alignItems="center">
           <Heading
-            size={{base: 'xl', sm: '2xl'}}
+            maxW="2xl"
+            size={{base: 'xl', sm: '4xl'}}
             fontWeight="bold"
             letterSpacing="tight"
             textAlign="center"
           >
             Tudo que você precisa para modernizar seu restaurante
           </Heading>
-          <Text mt={4} fontSize="lg" color="gray.600">
+          <Text fontSize="lg" color="gray.500" textAlign="center">
             Recursos desenvolvidos especificamente para agilizar operações e
             aumentar a eficiência
           </Text>
         </Stack>
 
-        <Stack maxW="7xl" mx="auto" mt={16}>
+        <Stack>
           <SimpleGrid columns={{base: 1, sm: 2, lg: 4}} gap={6}>
             {features.map((feature, index) => (
               <Card.Root key={index} overflow="hidden">
@@ -114,7 +115,7 @@ export function FeaturesSection() {
             ))}
           </SimpleGrid>
         </Stack>
-      </Container>
-    </Stack>
+      </Stack>
+    </Container>
   );
 }

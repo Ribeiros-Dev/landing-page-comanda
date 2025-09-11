@@ -16,48 +16,61 @@ export function HeroSection() {
       position="relative"
       overflow="hidden"
       bgGradient="linear(to-b, gray.50, gray.100)"
-      py={{base: 20, sm: 32}}
+      py={16}
       spacing={0}
     >
-      <Container maxW="7xl" mx="auto" px={{base: 4, sm: 6, lg: 8}}>
-        <Box maxW="4xl" mx="auto" textAlign="center">
+      <Container maxW="7xl" px={{base: 4, sm: 6, lg: 8}}>
+        <Stack gap={12} alignItems={'center'} justifyContent={'center'}>
           <Heading
             as="h1"
-            fontSize={{base: '4xl', sm: '6xl'}}
+            fontSize={{base: '4xl', sm: '5xl'}}
             fontWeight="bold"
             letterSpacing="tight"
             color="gray.900"
           >
             Revolucione a gestão do seu{' '}
-            <Text as="span" color="blue.600">
+            <Text as="span" color="orange.600">
               restaurante
             </Text>
           </Heading>
-          <Text mt={6} fontSize="lg" lineHeight="8" color="gray.600">
+
+          <Text
+            fontSize="lg"
+            color="gray.500"
+            flexWrap={'wrap'}
+            textAlign={'center'}
+          >
             Sistema completo de comandas digitais com controle em tempo real,
             impressão automática e gestão de pagamentos. Agilize seus pedidos e
             aumente a satisfação dos clientes.
           </Text>
-          <HStack mt={10} justify="center" spacing={6}>
-            <Button size="lg" colorScheme="blue" rightIcon={<LuArrowRight />}>
+
+          <Stack
+            direction={{base: 'column', sm: 'row'}}
+            justify="center"
+            gap={6}
+          >
+            <Button size="lg" colorPalette="orange">
               Começar Teste Grátis
+              <LuArrowRight />
             </Button>
-            <Button variant="outline" size="lg" leftIcon={<LuPlay />}>
+            <Button variant="outline" size="lg">
+              <LuPlay />
               Ver Demonstração
             </Button>
-          </HStack>
-          <Box mt={16}>
+          </Stack>
+
+          <Box>
             <Image
-              src="/restaurant-management-dashboard-with-tablets-and-p.jpg"
+              src="/site-in-plataforms.png"
               alt="Sistema comanda.vip em ação"
-              mx="auto"
               borderRadius="xl"
               shadow="2xl"
               border="1px"
               borderColor="gray.200"
             />
           </Box>
-        </Box>
+        </Stack>
       </Container>
     </Stack>
   );

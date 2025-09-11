@@ -16,7 +16,7 @@ import {LuCheck} from 'react-icons/lu';
 
 const plans = [
   {
-    name: 'Quinzenal',
+    name: 'Período de Teste',
     price: 'Grátis',
     period: '15 dias',
     description: 'Perfeito para testar todas as funcionalidades',
@@ -71,127 +71,123 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <Stack as="section" id="pricing" py={{base: 20, sm: 32}} bg="gray.50">
-      <Container maxW="7xl" px={{base: 4, sm: 6, lg: 8}}>
-        <Box maxW="2xl" mx="auto" textAlign="center">
-          <Heading as="h2" size="xl" fontWeight="bold" color="gray.900" mb={4}>
-            Planos que se adaptam ao seu negócio
-          </Heading>
-          <Text fontSize="lg" color="gray.600">
-            Escolha o plano ideal para o tamanho do seu estabelecimento
-          </Text>
-        </Box>
+    <Stack as="section" id="pricing" py={16} bg="orange.50">
+      <Container maxW="7xl">
+        <Stack gap={12}>
+          <Stack gap={3} maxW="2xl" mx="auto" textAlign="center">
+            <Heading as="h2" size="2xl" fontWeight="bold" color="gray.900">
+              Planos que se adaptam ao seu negócio
+            </Heading>
+            <Text fontSize="lg" color="gray.600">
+              Escolha o plano ideal para o tamanho do seu estabelecimento
+            </Text>
+          </Stack>
 
-        <SimpleGrid
-          columns={{base: 1, lg: 3}}
-          gap={8}
-          maxW="7xl"
-          mx="auto"
-          mt={16}
-        >
-          {plans.map((plan, index) => (
-            <Card.Root
-              key={index}
-              position="relative"
-              border={plan.popular ? '2px solid' : '1px solid'}
-              borderColor={plan.popular ? 'blue.500' : 'gray.200'}
-            >
-              {plan.popular && (
-                <Box
-                  position="absolute"
-                  top="-4"
-                  left="50%"
-                  transform="translateX(-50%)"
-                >
-                  <Badge
-                    bg="blue.500"
-                    color="white"
-                    px={4}
-                    py={1}
-                    borderRadius="full"
-                    fontSize="sm"
-                    fontWeight="medium"
+          <SimpleGrid columns={{base: 1, lg: 3}} gap={8} maxW="7xl" mx="auto">
+            {plans.map((plan, index) => (
+              <Card.Root
+                key={index}
+                position="relative"
+                border={plan.popular ? '2px solid' : '1px solid'}
+                borderColor={plan.popular ? 'orange.500' : 'gray.200'}
+              >
+                {plan.popular && (
+                  <Box
+                    position="absolute"
+                    top="-4"
+                    left="50%"
+                    transform="translateX(-50%)"
                   >
-                    Mais Popular
-                  </Badge>
-                </Box>
-              )}
-
-              <Card.Header textAlign="center">
-                <Heading as="h3" size="lg" mb={4}>
-                  {plan.name}
-                </Heading>
-                <Box>
-                  <Text
-                    as="span"
-                    fontSize="4xl"
-                    fontWeight="bold"
-                    color="gray.900"
-                  >
-                    {plan.price}
-                  </Text>
-                  {plan.originalPrice && (
-                    <Text
-                      as="span"
-                      ml={2}
-                      fontSize="lg"
-                      color="gray.500"
-                      textDecoration="line-through"
-                    >
-                      {plan.originalPrice}
-                    </Text>
-                  )}
-                  <Text as="span" color="gray.500">
-                    /{plan.period}
-                  </Text>
-                  {plan.discount && (
-                    <Text
-                      mt={1}
+                    <Badge
+                      bg="orange.500"
+                      color="white"
+                      px={4}
+                      py={1}
+                      borderRadius="full"
                       fontSize="sm"
-                      color="blue.500"
                       fontWeight="medium"
                     >
-                      {plan.discount}
+                      Mais Popular
+                    </Badge>
+                  </Box>
+                )}
+
+                <Card.Header textAlign="center">
+                  <Heading as="h3" size="lg" mb={4}>
+                    {plan.name}
+                  </Heading>
+                  <Box>
+                    <Text
+                      as="span"
+                      fontSize="4xl"
+                      fontWeight="bold"
+                      color="gray.900"
+                    >
+                      {plan.price}
                     </Text>
-                  )}
-                </Box>
-                <Text mt={4} color="gray.600">
-                  {plan.description}
-                </Text>
-              </Card.Header>
-
-              <Card.Body>
-                <Button
-                  w="full"
-                  mb={6}
-                  colorScheme={plan.popular ? 'blue' : 'gray'}
-                  variant={plan.popular ? 'solid' : 'outline'}
-                >
-                  {plan.cta}
-                </Button>
-
-                <VStack spacing={3} align="start">
-                  {plan.features.map((feature, featureIndex) => (
-                    <HStack key={featureIndex} align="start">
-                      <Icon
-                        h={5}
-                        w={5}
-                        color="blue.500"
-                        mt={0.5}
-                        flexShrink={0}
+                    {plan.originalPrice && (
+                      <Text
+                        as="span"
+                        ml={2}
+                        fontSize="lg"
+                        color="gray.500"
+                        textDecoration="line-through"
                       >
-                        <LuCheck />
-                      </Icon>
-                      <Text fontSize="sm" color="gray.600">
-                        {feature}
+                        {plan.originalPrice}
                       </Text>
-                    </HStack>
-                  ))}
-                </VStack>
-              </Card.Body>
-            </Card.Root>
-          ))}
-        </SimpleGrid>
+                    )}
+                    <Text as="span" color="gray.500">
+                      /{plan.period}
+                    </Text>
+                    {plan.discount && (
+                      <Text
+                        mt={1}
+                        fontSize="sm"
+                        color="orange.500"
+                        fontWeight="medium"
+                      >
+                        {plan.discount}
+                      </Text>
+                    )}
+                  </Box>
+                  <Text mt={4} color="gray.600">
+                    {plan.description}
+                  </Text>
+                </Card.Header>
+
+                <Card.Body>
+                  <Button
+                    w="full"
+                    mb={6}
+                    colorPalette={plan.popular ? 'orange' : 'gray'}
+                    variant={plan.popular ? 'solid' : 'outline'}
+                  >
+                    {plan.cta}
+                  </Button>
+
+                  <VStack spacing={3} align="start">
+                    {plan.features.map((feature, featureIndex) => (
+                      <HStack key={featureIndex} align="start">
+                        <Icon
+                          h={5}
+                          w={5}
+                          color="orange.500"
+                          mt={0.5}
+                          flexShrink={0}
+                        >
+                          <LuCheck />
+                        </Icon>
+                        <Text fontSize="sm" color="gray.600">
+                          {feature}
+                        </Text>
+                      </HStack>
+                    ))}
+                  </VStack>
+                </Card.Body>
+              </Card.Root>
+            ))}
+          </SimpleGrid>
+        </Stack>
       </Container>
     </Stack>
   );

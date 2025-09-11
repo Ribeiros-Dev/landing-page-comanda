@@ -12,7 +12,7 @@ export function Home() {
     <VStack spacing={0} align="stretch" minH="100dvh">
       <Header />
 
-      <Stack as="main" flex="1" spacing={0}>
+      <Stack as="main" flex="1" gap={12}>
         <HeroSection />
         <FeaturesSection />
         <PricingSection />
