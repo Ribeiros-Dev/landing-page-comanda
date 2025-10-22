@@ -14,7 +14,6 @@ import {
   LuCreditCard,
   LuUsers,
   LuChartBar,
-  LuWifi,
   LuShield
 } from 'react-icons/lu';
 
@@ -47,7 +46,7 @@ const features = [
     icon: LuUsers,
     title: 'Gestão de Usuários',
     description:
-      'Controle total de garçons, cozinheiros e administradores com diferentes permissões.'
+      'Controle total de garçons e administradores com diferentes permissões.'
   },
   {
     icon: LuChartBar,
@@ -56,11 +55,17 @@ const features = [
       'Análises detalhadas de vendas, produtos mais pedidos e performance do estabelecimento.'
   },
   {
-    icon: LuWifi,
-    title: 'Funciona Offline',
+    icon: LuUsers,
+    title: 'Plataforma do cliente',
     description:
-      'Continue operando mesmo sem internet. Sincronização automática quando voltar online.'
+      'Permita que seus clientes façam pedidos e pagamentos diretamente pelo celular.'
   },
+  // {
+  //   icon: LuWifi,
+  //   title: 'Funciona Offline',
+  //   description:
+  //     'Continue operando mesmo sem internet. Sincronização automática quando voltar online.'
+  // },
   {
     icon: LuShield,
     title: 'Dados Seguros',

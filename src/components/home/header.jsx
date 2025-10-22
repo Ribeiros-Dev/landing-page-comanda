@@ -11,12 +11,43 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import {useState} from 'react';
-import {LuMenu, LuX} from 'react-icons/lu';
+import React from 'react';
+import {LuMenu} from 'react-icons/lu';
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrollToSection = React.useCallback((id) => {
+    if (typeof window === 'undefined') return;
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+  }, []);
 
+  const handleHashClick = (e) => {
+    const anchor = e.target.closest && e.target.closest('a');
+    if (!anchor) return;
+
+    const href = anchor.getAttribute('href') || '';
+    if (!href.startsWith('#')) return;
+
+    e.preventDefault();
+    const id = href.slice(1);
+
+    if (typeof scrollToSection === 'function') {
+      scrollToSection(id);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior: 'smooth'});
+    }
+  };
+
+  if (
+    typeof window !== 'undefined' &&
+    !window.__comanda_header_scroll_attached
+  ) {
+    document.addEventListener('click', handleHashClick);
+    window.__comanda_header_scroll_attached = true;
+  }
   return (
     <Box
       as="header"
@@ -94,7 +125,9 @@ export function Header() {
           </Box>
 
           <Box display={{base: 'none', md: 'block'}}>
-            <Button colorPalette="orange">Começar Grátis</Button>
+            <Link href="#form">
+              <Button colorPalette="orange">Começar Grátis</Button>
+            </Link>
           </Box>
 
           <Drawer.Root size={'xs'} as="nav">

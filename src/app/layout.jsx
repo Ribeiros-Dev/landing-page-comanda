@@ -1,4 +1,5 @@
 import {Provider} from '@/components/ui/provider';
+import {Toaster} from '@/components/ui/toaster';
 
 export default function RootLayout({children}) {
   return (
@@ -21,7 +22,9 @@ export default function RootLayout({children}) {
       </head>
 
       <body suppressHydrationWarning={true}>
-        <Provider>{children}</Provider>
+        <Provider>
+          {children} <Toaster />
+        </Provider>
       </body>
     </html>
   );

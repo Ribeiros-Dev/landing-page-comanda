@@ -1,4 +1,5 @@
 import {Box, Container, Heading, Text, Button, Stack} from '@chakra-ui/react';
+import Link from 'next/link';
 import {LuArrowRight} from 'react-icons/lu';
 
 export function CTASection() {
@@ -20,12 +21,14 @@ export function CTASection() {
             gestão. Comece seu teste gratuito hoje mesmo, sem compromisso.
           </Text>
           <Box mt="6" textAlign="center">
-            <Button size="lg" variant="outline">
-              Começar Teste Grátis de 15 Dias
-              <LuArrowRight
-                style={{marginLeft: '8px', height: '16px', width: '16px'}}
-              />
-            </Button>
+            <Link href="#form">
+              <Button size="lg" variant="outline">
+                Começar Teste Grátis de 15 Dias
+                <LuArrowRight
+                  style={{marginLeft: '8px', height: '16px', width: '16px'}}
+                />
+              </Button>
+            </Link>
           </Box>
           <Text mt="4" fontSize="sm" color="primary.foreground" opacity="0.7">
             Sem cartão de crédito • Sem compromisso • Suporte incluído

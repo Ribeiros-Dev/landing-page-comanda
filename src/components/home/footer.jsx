@@ -38,54 +38,40 @@ export function Footer() {
               </HStack>
               <HStack color="gray.600">
                 <LuSmartphone size={16} />
-                <Text>(11) 99999-9999</Text>
+                <Text>(88) 98120-1085</Text>
               </HStack>
               <HStack color="gray.600">
                 <LuMapPin size={16} />
-                <Text>São Paulo, SP</Text>
+                <Text>Juazeiro do Norte, CE</Text>
               </HStack>
             </VStack>
           </GridItem>
 
           <GridItem>
-            <Heading as="h4" size="md" mb={4}>
+            <Heading as="h4" size="md" mb={4} color="gray.600">
               Produto
             </Heading>
-            <VStack gap={2} align="start">
+            <VStack gap={2} align="start" color="gray.600">
+              <Link href="#features">Recursos</Link>
+              <Link href="#pricing">Preços</Link>
               <Link
-                href="#features"
-                color="gray.600"
-                _hover={{color: 'blue.600'}}
+                href="https://demo.comanda.vip"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Recursos
-              </Link>
-              <Link
-                href="#pricing"
-                color="gray.600"
-                _hover={{color: 'blue.600'}}
-              >
-                Preços
-              </Link>
-              <Link href="#" color="gray.600" _hover={{color: 'blue.600'}}>
                 Demonstração
               </Link>
             </VStack>
           </GridItem>
 
           <GridItem>
-            <Heading as="h4" size="md" mb={4}>
+            <Heading as="h4" size="md" mb={4} color="gray.600">
               Suporte
             </Heading>
-            <VStack gap={2} align="start">
-              <Link href="#" color="gray.600" _hover={{color: 'blue.600'}}>
-                Central de Ajuda
-              </Link>
-              <Link href="#" color="gray.600" _hover={{color: 'blue.600'}}>
-                Treinamentos
-              </Link>
-              <Link href="#" color="gray.600" _hover={{color: 'blue.600'}}>
-                Status
-              </Link>
+            <VStack gap={2} align="start" color="gray.600">
+              <Link href="#">Central de Ajuda</Link>
+              <Link href="#">Treinamentos</Link>
+              <Link href="#">Status</Link>
             </VStack>
           </GridItem>
         </Grid>

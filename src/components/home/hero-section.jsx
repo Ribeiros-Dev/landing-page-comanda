@@ -3,11 +3,11 @@ import {
   Button,
   Container,
   Heading,
-  HStack,
   Image,
   Stack,
   Text
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import {LuArrowRight, LuPlay} from 'react-icons/lu';
 
 export function HeroSection() {
@@ -50,14 +50,22 @@ export function HeroSection() {
             justify="center"
             gap={6}
           >
-            <Button size="lg" colorPalette="orange">
-              Começar Teste Grátis
-              <LuArrowRight />
-            </Button>
-            <Button variant="outline" size="lg">
-              <LuPlay />
-              Ver Demonstração
-            </Button>
+            <Link href="#form">
+              <Button size="lg" colorPalette="orange">
+                Começar Teste Grátis
+                <LuArrowRight />
+              </Button>
+            </Link>
+            <Link
+              href="https://demo.comanda.vip"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="lg">
+                <LuPlay />
+                Ver Demonstração
+              </Button>
+            </Link>
           </Stack>
 
           <Box>

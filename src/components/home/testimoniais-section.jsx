@@ -10,28 +10,28 @@ import {
   Stack,
   Text
 } from '@chakra-ui/react';
-import {LuStar} from 'react-icons/lu';
+import {FaStar} from 'react-icons/fa';
 
 const testimonials = [
   {
-    name: 'Carlos Silva',
-    business: 'Restaurante Sabor & Arte',
-    image: '/restaurant-owner-portrait.png',
+    name: 'Italo Lima',
+    business: 'Barkanas',
+    image: '/barkanas.jpg',
     content:
       'O comanda.vip revolucionou nosso atendimento. Reduzimos o tempo de pedido em 40% e os erros praticamente sumiram. Recomendo para qualquer restaurante que quer modernizar.',
     rating: 5
   },
   {
-    name: 'Ana Rodrigues',
-    business: 'Lanchonete da Ana',
-    image: '/female-business-owner-portrait.png',
+    name: 'João Francisco',
+    business: 'Gela Beer',
+    image: '/gela-beer.jpg',
     content:
       'Desde que implementamos o sistema, nosso faturamento aumentou 25%. A impressão automática na cozinha agilizou muito nosso processo. Excelente investimento!',
     rating: 5
   },
   {
     name: 'Roberto Santos',
-    business: 'Pizzaria Bella Vista',
+    business: 'Pizzaria Bella Napoli',
     image: '/pizzeria-owner-portrait.jpg',
     content:
       'A funcionalidade de tempo real é fantástica. Agora sabemos exatamente quando uma mesa está livre e podemos otimizar nosso atendimento. Sistema muito intuitivo.',
@@ -78,7 +78,7 @@ export function TestimonialsSection() {
                   <HStack mb={4}>
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Icon key={i} boxSize={4} color="yellow.400">
-                        <LuStar />
+                        <FaStar />
                       </Icon>
                     ))}
                   </HStack>

@@ -1,3 +1,4 @@
+import React from 'react';
 import {CTASection} from './cta-section';
 import {FeaturesSection} from './features-section';
 import {Header} from './header';
@@ -6,6 +7,7 @@ import {PricingSection} from './princing-section';
 import {TestimonialsSection} from './testimoniais-section';
 import {Footer} from './footer';
 import {Stack, VStack} from '@chakra-ui/react';
+import {Form} from './form';
 
 export function Home() {
   return (
@@ -16,6 +18,7 @@ export function Home() {
         <HeroSection />
         <FeaturesSection />
         <PricingSection />
+        <Form />
         <TestimonialsSection />
         <CTASection />
       </Stack>
