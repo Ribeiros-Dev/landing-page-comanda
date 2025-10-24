@@ -1,5 +1,5 @@
 'use client';
-import { format } from '@/utils/format';
+import {format} from '@/utils/format';
 import {
   Button,
   Card,
@@ -13,12 +13,12 @@ import {
   VStack
 } from '@chakra-ui/react';
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import {useForm} from 'react-hook-form';
+import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { toaster } from '../ui/toaster';
-import { useAtomValue } from 'jotai';
-import { plan } from '@/atom/plan';
+import {toaster} from '../ui/toaster';
+import {useAtomValue} from 'jotai';
+import {plan} from '@/atom/plan';
 
 const createTenantSchema = yup.object().shape({
   name: yup.string().required('O nome é obrigatório'),
@@ -38,7 +38,7 @@ export function Form() {
     handleSubmit,
     reset,
     setValue,
-    formState: { errors, isSubmitting }
+    formState: {errors, isSubmitting}
   } = useForm({
     resolver: yupResolver(createTenantSchema)
   });
@@ -53,7 +53,7 @@ export function Form() {
         }
       });
 
-      const { data } = await res.json();
+      const {data} = await res.json();
 
       setPlans(data);
     } catch (error) {
@@ -79,7 +79,7 @@ export function Form() {
           Accept: 'application/json'
         },
         body: JSON.stringify(formmatedBody)
-      }).then(({ message }) => {
+      }).then(({message}) => {
         toaster.create({
           description: message,
           type: 'success'
@@ -96,7 +96,7 @@ export function Form() {
   }, []);
 
   React.useEffect(() => {
-    reset({ plan_id: selectedPlan || '' });
+    reset({plan_id: selectedPlan || ''});
   }, [selectedPlan]);
 
   return (
@@ -156,8 +156,8 @@ export function Form() {
             >
               <HStack align="stretch">
                 {[
-                  { label: 'Mensal', value: 'monthly' },
-                  { label: 'Anual', value: 'annual' }
+                  {label: 'Mensal', value: 'monthly'},
+                  {label: 'Anual', value: 'annual'}
                 ].map((item) => (
                   <RadioCard.Item key={item.value} value={item.value}>
                     <RadioCard.ItemHiddenInput {...register('billing_cycle')} />
@@ -179,10 +179,10 @@ export function Form() {
                 >
                   {Array.isArray(plans)
                     ? plans.map((plan) => (
-                      <option key={plan.id} value={plan.id}>
-                        {plan.name}
-                      </option>
-                    ))
+                        <option key={plan.id} value={plan.id}>
+                          {plan.name}
+                        </option>
+                      ))
                     : null}
                 </NativeSelect.Field>
                 <NativeSelect.Indicator />
