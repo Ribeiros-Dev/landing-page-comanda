@@ -197,7 +197,23 @@ export function PricingSection() {
                       mb={6}
                       colorPalette={index === 1 ? 'orange' : 'gray'}
                       variant={index === 1 ? 'solid' : 'outline'}
-                      onClick={() => setPlanAtom(plan.id)}
+                      onClick={() => {
+                        setPlanAtom(plan.id);
+                        const el = document.getElementById('form');
+                        if (el) {
+                          el.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                          });
+                          return;
+                        }
+                        const fallback = document.querySelector('#form');
+                        if (fallback)
+                          fallback.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                          });
+                      }}
                     >
                       Assinar agora
                     </Button>

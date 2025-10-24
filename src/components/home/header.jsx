@@ -77,13 +77,15 @@ export function Header() {
         <Flex h={16} align="center" justify="space-between">
           <Box flexShrink={0}>
             <HStack spacing={2}>
-              <Image
-                src="/logo.ico"
-                alt="Logo comanda.vip"
-                width={32}
-                height={32}
-                priority
-              />
+              <Link href="/" passHref>
+                <Image
+                  src="/logo.ico"
+                  alt="Logo comanda.vip"
+                  width={32}
+                  height={32}
+                  priority
+                />
+              </Link>
 
               <Text fontSize="2xl" fontWeight="bold" color="orange.500">
                 comanda.vip
