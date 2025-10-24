@@ -8,10 +8,11 @@ import {TestimonialsSection} from './testimoniais-section';
 import {Footer} from './footer';
 import {Stack, VStack} from '@chakra-ui/react';
 import {Form} from './form';
+import {ScrollToTopButton} from '../scroll-top-button';
 
 export function Home() {
   return (
-    <VStack spacing={0} align="stretch" minH="100dvh">
+    <VStack gap={0} align="stretch" minH="100dvh">
       <Header />
 
       <Stack as="main" flex="1" gap={12}>
@@ -23,6 +24,7 @@ export function Home() {
         <CTASection />
       </Stack>
 
+      <ScrollToTopButton />
       <Footer />
     </VStack>
   );

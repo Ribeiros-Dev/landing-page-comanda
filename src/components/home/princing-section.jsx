@@ -218,7 +218,7 @@ export function PricingSection() {
                       Assinar agora
                     </Button>
 
-                    <VStack spacing={3} align="start">
+                    <VStack gap={3} align="start">
                       {getFeatures(plan).map((feature, featureIndex) => (
                         <HStack key={featureIndex} align="start">
                           <Icon

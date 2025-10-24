@@ -76,8 +76,8 @@ export function Header() {
       <Box maxW="container.xl" mx="auto" px={{base: 4, sm: 6, lg: 8}}>
         <Flex h={16} align="center" justify="space-between">
           <Box flexShrink={0}>
-            <HStack spacing={2}>
-              <Link href="/" passHref>
+            <Link href="/" passHref>
+              <HStack gap={2}>
                 <Image
                   src="/logo.ico"
                   alt="Logo comanda.vip"
@@ -85,12 +85,12 @@ export function Header() {
                   height={32}
                   priority
                 />
-              </Link>
 
-              <Text fontSize="2xl" fontWeight="bold" color="orange.500">
-                comanda.vip
-              </Text>
-            </HStack>
+                <Text fontSize="2xl" fontWeight="bold" color="orange.500">
+                  comanda.vip
+                </Text>
+              </HStack>
+            </Link>
           </Box>
 
           <Box as="nav" display={{base: 'none', md: 'block'}}>
@@ -145,7 +145,7 @@ export function Header() {
                 <Drawer.Header>
                   <Drawer.Title>
                     <Box flexShrink={0}>
-                      <HStack spacing={2}>
+                      <HStack gap={2}>
                         <Image
                           src="/logo.ico"
                           alt="Logo comanda.vip"
