@@ -42,10 +42,11 @@ export function PricingSection() {
 
       setPlans(data);
     } catch (error) {
-      console.error(error);
       setPlans([]);
+      throw error;
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const getFeatures = React.useCallback((p) => {
@@ -89,45 +90,44 @@ export function PricingSection() {
   React.useEffect(() => {}, [typeContractPlan]);
 
   return (
-    <Skeleton isLoaded={!loading}>
-      <Stack as="section" id="pricing" py={16} bg="orange.50">
-        <Container maxW="7xl">
-          <Stack gap={12}>
-            <Stack gap={3} maxW="2xl" mx="auto" textAlign="center">
-              <Heading as="h2" size="2xl" fontWeight="bold" color="gray.900">
-                Planos que se adaptam ao seu negócio
-              </Heading>
-              <Text fontSize="lg" color="gray.600">
-                Escolha o plano ideal para o tamanho do seu estabelecimento
-              </Text>
+    <Stack as="section" id="pricing" py={16} bg="orange.50">
+      <Container maxW="7xl">
+        <Stack gap={12}>
+          <Stack gap={3} maxW="2xl" mx="auto" textAlign="center">
+            <Heading as="h2" size="2xl" fontWeight="bold" color="gray.900">
+              Planos que se adaptam ao seu negócio
+            </Heading>
+            <Text fontSize="lg" color="gray.600">
+              Escolha o plano ideal para o tamanho do seu estabelecimento
+            </Text>
 
-              <RadioCard.Root
-                value={typeContractPlan}
-                onValueChange={(e) => setTypeContractPlan(e.value)}
-                colorPalette="orange"
-                align="center"
-              >
-                <HStack align="stretch">
-                  {[
-                    {label: 'Mensal', value: 'monthly'},
-                    {label: 'Anual', value: 'yearly'}
-                  ].map((item) => (
-                    <RadioCard.Item key={item.value} value={item.value}>
-                      <RadioCard.ItemHiddenInput />
-                      <RadioCard.ItemControl>
-                        <RadioCard.ItemText>{item.label}</RadioCard.ItemText>
-                        <RadioCard.ItemIndicator />
-                      </RadioCard.ItemControl>
-                    </RadioCard.Item>
-                  ))}
-                </HStack>
-              </RadioCard.Root>
-            </Stack>
+            <RadioCard.Root
+              value={typeContractPlan}
+              onValueChange={(e) => setTypeContractPlan(e.value)}
+              colorPalette="orange"
+              align="center"
+            >
+              <HStack align="stretch">
+                {[
+                  {label: 'Mensal', value: 'monthly'},
+                  {label: 'Anual', value: 'yearly'}
+                ].map((item) => (
+                  <RadioCard.Item key={item.value} value={item.value}>
+                    <RadioCard.ItemHiddenInput />
+                    <RadioCard.ItemControl>
+                      <RadioCard.ItemText>{item.label}</RadioCard.ItemText>
+                      <RadioCard.ItemIndicator />
+                    </RadioCard.ItemControl>
+                  </RadioCard.Item>
+                ))}
+              </HStack>
+            </RadioCard.Root>
+          </Stack>
 
-            <SimpleGrid columns={{base: 1, lg: 3}} gap={8} maxW="7xl" mx="auto">
-              {plans.map((plan, index) => (
+          <SimpleGrid columns={{base: 1, lg: 3}} gap={8} maxW="7xl" mx="auto">
+            {plans.map((plan, index) => (
+              <Skeleton loading={loading} key={index}>
                 <Card.Root
-                  key={index}
                   position="relative"
                   border={index === 1 ? '2px solid' : '1px solid'}
                   borderColor={index === 1 ? 'orange.500' : 'gray.200'}
@@ -222,11 +222,11 @@ export function PricingSection() {
                     </VStack>
                   </Card.Body>
                 </Card.Root>
-              ))}
-            </SimpleGrid>
-          </Stack>
-        </Container>
-      </Stack>
-    </Skeleton>
+              </Skeleton>
+            ))}
+          </SimpleGrid>
+        </Stack>
+      </Container>
+    </Stack>
   );
 }

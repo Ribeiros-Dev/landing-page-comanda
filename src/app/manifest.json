@@ -1,0 +1,22 @@
+{
+  "name": "Comanda Vip",
+  "short_name": "Comanda Vip",
+  "description": "Comanda Vip",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#696a69",
+  "icons": [
+    {
+      "src": "/logo.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo.ico",
+      "sizes": "any",
+      "type": "image/x-icon",
+      "purpose": "maskable"
+    }
+  ]
+}

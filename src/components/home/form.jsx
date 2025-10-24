@@ -57,8 +57,8 @@ export function Form() {
 
       setPlans(data);
     } catch (error) {
-      console.error(error);
       setPlans([]);
+      throw error;
     }
   };
 
@@ -71,24 +71,20 @@ export function Form() {
       phone: formattedPhone
     };
 
-    try {
-      await fetch('/api/tenant', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify(formmatedBody)
-      }).then(({message}) => {
-        toaster.create({
-          description: message,
-          type: 'success'
-        });
-        reset();
+    await fetch('/api/tenant', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(formmatedBody)
+    }).then(({message}) => {
+      toaster.create({
+        description: message,
+        type: 'success'
       });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
+      reset();
+    });
   };
 
   React.useEffect(() => {

@@ -165,34 +165,63 @@ export function Header() {
                 </Drawer.Header>
                 <Drawer.Body>
                   <VStack gap={6}>
-                    <Link
-                      href="#features"
+                    <Button
+                      asChild
                       _hover={{color: 'orange.500'}}
                       transition="colors"
+                      variant={'ghost'}
+                      w={'full'}
                     >
-                      Recursos
-                    </Link>
-                    <Link
-                      href="#pricing"
+                      <Drawer.CloseTrigger>
+                        <a href="#features">Recursos</a>
+                      </Drawer.CloseTrigger>
+                    </Button>
+                    <Button
+                      asChild
                       _hover={{color: 'orange.500'}}
                       transition="colors"
+                      variant={'ghost'}
+                      w={'full'}
                     >
-                      Preços
-                    </Link>
-                    <Link
-                      href="#testimonials"
+                      <Drawer.CloseTrigger>
+                        <a href="#pricing">Preços</a>
+                      </Drawer.CloseTrigger>
+                    </Button>
+                    <Button
+                      asChild
                       _hover={{color: 'orange.500'}}
                       transition="colors"
+                      variant={'ghost'}
+                      w={'full'}
                     >
-                      Depoimentos
-                    </Link>
-                    <Link
-                      href="#contact"
+                      <Drawer.CloseTrigger>
+                        <a href="#testimonials">Depoimentos</a>
+                      </Drawer.CloseTrigger>
+                    </Button>
+
+                    <Button
+                      asChild
                       _hover={{color: 'orange.500'}}
                       transition="colors"
+                      variant={'ghost'}
+                      w={'full'}
                     >
-                      Contato
-                    </Link>
+                      <Drawer.CloseTrigger>
+                        <a href="#contact">Contato</a>
+                      </Drawer.CloseTrigger>
+                    </Button>
+
+                    <Button
+                      asChild
+                      _hover={{color: 'orange.500'}}
+                      transition="colors"
+                      variant={'ghost'}
+                      w={'full'}
+                    >
+                      <Drawer.CloseTrigger>
+                        <a href="#form">Começar Grátis</a>
+                      </Drawer.CloseTrigger>
+                    </Button>
                   </VStack>
                 </Drawer.Body>
               </Drawer.Content>

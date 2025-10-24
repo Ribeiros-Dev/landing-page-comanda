@@ -14,6 +14,11 @@ export default function RootLayout({children}) {
         <link rel="icon" type="image/png" sizes="32x32" href="/logo.svg" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logo.svg" />
         <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content={'#f97316'}></meta>
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content={'#f97316'}
+        ></meta>
         <title>Comanda VIP</title>
         <meta
           name="description"
