@@ -1,8 +1,8 @@
 'use client';
 
-import {ArrowUpIcon} from '@chakra-ui/icons';
 import {IconButton} from '@chakra-ui/react';
 import React from 'react';
+import {LuArrowUp} from 'react-icons/lu';
 
 export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -48,7 +48,7 @@ export function ScrollToTopButton() {
           variant={'outline'}
           aria-label="return to top"
         >
-          <ArrowUpIcon color="orange.500" />
+          <LuArrowUp color="orange.500" />
         </IconButton>
       )}
     </React.Fragment>
